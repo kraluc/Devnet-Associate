@@ -2,7 +2,7 @@
 import sys
 from helper import *
 
-import xml.etree.ElementTree as try:
+import xml.etree.ElementTree as ET
 
 import xml.dom.minidom as MD
 
