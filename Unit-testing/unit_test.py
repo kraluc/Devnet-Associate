@@ -23,6 +23,4 @@ class TestTools(unittest.TestCase):
         self.tools.dispose()
 
 if __name__ == "__main__":
-    test_true_when_greater()
-    test_true_when_smaller()
-    test_false_when_equal()
+    unittest.main()
