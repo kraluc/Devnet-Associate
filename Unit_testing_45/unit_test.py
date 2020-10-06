@@ -2,9 +2,10 @@
 """ 13.3 Testing and Securing Applications
     4.5 Construct a Python Unit Test
 """
+import sys
 
 import unittest
-from is_greater import is_greater
+from 4.5.Unit-testing.is_greater import is_greater
 
 class TestTools(unittest.TestCase):
     def setUp(self):
