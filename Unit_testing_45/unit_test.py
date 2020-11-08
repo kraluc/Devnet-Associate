@@ -5,7 +5,7 @@
 import sys
 
 import unittest
-from 4.5.Unit-testing.is_greater import is_greater
+from Unit_testing_45.is_greater import is_greater
 
 class TestTools(unittest.TestCase):
     def setUp(self):

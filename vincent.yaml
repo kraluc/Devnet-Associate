@@ -1,0 +1,8 @@
+user:
+  location:
+    city: Gilroy
+    state: CA
+  name: vincent
+  roles:
+  - admin
+  - user
