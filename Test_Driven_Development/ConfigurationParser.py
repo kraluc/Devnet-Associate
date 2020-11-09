@@ -14,16 +14,14 @@ class ConfigurationParser:
         return customerNames
 
     def parseCustomerVlan(self,customerName):
+        " Note the atomic grouing ( +)"
         intPattern = (
             r"interface GigabitEthernet0\/0\.([0-9]+)\n  encapsulation " +
             r"dot1Q ([0-9]+)\n  ip vrf forwarding %s" % (customerName)
         )
         #print(f'customer vlan pattern {intPattern}')
         allCustomerSubInterfaces = re.search(intPattern, self.deviceConfig)
-        #print(allCustomerSubInterfaces)
-        #print(f'Full Match: {allCustomerSubInterfaces.group(0)}')
-        print(f'first match: {allCustomerSubInterfaces.group(1)}')
-        #print(f'Second match: {allCustomerSubInterfaces.group(2)}') # should equal the 1st match
+        print(f'vlan: {allCustomerSubInterfaces.group(1)}')
         return int(allCustomerSubInterfaces.group(1)) # return the 1st match
 
     def parseCustomerIPAddress(self, customerName):
@@ -31,7 +29,7 @@ class ConfigurationParser:
         # = forcing a match with +
         byte = r"25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]"
         ipPattern = r"(" + (r"(%s)\." % byte) * 3 + r"(%s))" % byte # () for atomic result
-        Pattern = r"(%s\n  ip address %s )+" % (customerName, ipPattern)
+        Pattern = r"(%s\n  ip address %s )" % (customerName, ipPattern)
         match = re.search(Pattern, self.deviceConfig).group(1)
         ip_match = re.search(ipPattern, match).group(1)
         print(f'{customerName} ip: {ip_match}')
