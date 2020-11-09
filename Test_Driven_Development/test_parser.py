@@ -4,6 +4,12 @@ sys.path.append(os.path.join(os.path.curdir,'Test_Driven_Development'))
 from ConfigurationParser import ConfigurationParser
 import json
 
+'''
+DevNet Test-Driven Development Example
+    Vincent Ricci
+    Nov 9, 2020
+'''
+
 class TestParse(unittest.TestCase):
 
     cp = ConfigurationParser()
