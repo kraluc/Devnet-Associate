@@ -9,7 +9,7 @@ class TestParse(unittest.TestCase):
     cp = ConfigurationParser()
     expected_names = ['CUSTOMER_A', 'CUSTOMER_B']
     expected_vlans = [100, 101]
-    expected_ip_addresses = list(map(lambda vlan : f'10.10.{vlan}.1', expected_vlans))
+    expected_ip_addresses = [ f'10.10.{vlan}.1' for vlan in expected_vlans ]
     expected_data = { x : [y,z] for x,y,z in zip(expected_names, expected_ip_addresses,expected_vlans)}
 
 
