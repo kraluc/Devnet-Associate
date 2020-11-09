@@ -4,17 +4,39 @@ sys.path.append(os.path.join(os.path.curdir,'Test_Driven_Development'))
 from ConfigurationParser import *
 
 class TestParse(unittest.TestCase):
+
     cp = ConfigurationParser()
+    expected_names = ['CUSTOMER_A', 'CUSTOMER_B']
+    expected_vlans = [100, 101]
+    expected_ip_addresses = list(map(lambda vlan : f'10.10.{vlan}.1', expected_vlans))
+
     def test_parse_customer_name(self):
-        expected_names = ['CUSTOMER_A', 'CUSTOMER_B']
+
         parsed_names = self.cp.parseCustomerNames()
         self.assertEqual(list, type(parsed_names))
-        self.assertEqual(expected_names, parsed_names)
+        self.assertEqual(self.expected_names, parsed_names)
+
+
     def test_parse_customer_vlan(self):
-        customer_name = 'CUSTOMER_A'
-        expected_vlan = 100
-        parsed_vlan = self.cp.parseCustomerVlan(customer_name)
-        self.assertEqual(expected_vlan, parsed_vlan)
+        '''
+            Validate vlans for all customers
+        '''
+        parsed_vlans = []
+        for expected_vlan, customer_name in zip(
+            self.expected_vlans,
+            self.expected_names):
+            parsed_vlans.append(self.cp.parseCustomerVlan(customer_name))
+        self.assertEqual(self.expected_vlans, parsed_vlans)
+
+    def test_parse_customer_ip_address(self):
+
+        parsed_ip_addresses = []
+        for expected_ip_addresses, customer_name in zip(
+                self.expected_ip_addresses,
+                self.expected_names):
+            parsed_ip_addresses.append(self.cp.parseCustomerIPAddress(customer_name))
+        self.assertEqual(self.expected_ip_addresses, parsed_ip_addresses)
+
 
 if __name__ == "__main__":
     unittest.main()
