@@ -24,7 +24,9 @@ if __name__ == "__main__":
 
     # Open the user.yaml file as read only
     with open('user.yaml', 'r') as stream:
-        # load the stream using safe_load
+        # Parse the first YAML document in a stream using 'safe_load'.
+        # Otherwise use 'full_load_all' (all YAML docs)
+        # https://stackabuse.com/reading-and-writing-yaml-to-a-file-in-python/
         user_yaml = yaml.safe_load(stream)
 
     # Print the object type

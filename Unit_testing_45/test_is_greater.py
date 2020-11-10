@@ -1,16 +1,19 @@
-from Unit_testing_45.is_greater import is_greater
+import sys, os
+sys.path.append(os.path.join(os.path.curdir,'Unit_testing_45'))
+print(sys.path)
+from is_greater import *
 
 
 def publish_result(test):
     ## decorate test function
-    def result():
+    def wrapper():
         value = test()
         if value[0] == value[1]:
             result = "PASS"
         else:
             result = "FAIL"
         print(f'{test.__name__}: {result}')
-    return result
+    return wrapper
 
 ## Note that all the decorated test functions take no
 ## argument and return an array
