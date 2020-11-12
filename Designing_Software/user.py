@@ -14,10 +14,10 @@ class User(Observer):
 
     def update(self, publisher): # Fetching the state from the observable object
                                  # that was passed to the method
-        print('f> Updating user {self.username}')
+        print(f'> Updating user {self.username}')
         state = publisher.get_state()
         self.tracklist.append(state)
 
     def play_songs(self):
-        print('f> Playing {self.tracklist} to {self.username}')
+        print(f'> Playing {self.tracklist} to {self.username}')
 
