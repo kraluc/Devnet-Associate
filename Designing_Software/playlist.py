@@ -1,6 +1,6 @@
 class Playlist:
     def __init__(self):
-        self.tracklist = []
+        self.tracklist = [] # this publisher attribute has peer in concrete Observers
         self._observers_list = []
 
     def add_track(self, track):
@@ -18,7 +18,7 @@ class Playlist:
         self._observers_list.append(observer)
 
 
-class Jazz(Playlist):
+class Jazz(Playlist): # inheriting all the logic from the parent publisher
     pass
 
 class Funk(Playlist):
