@@ -1,6 +1,7 @@
 import random
 import string
 
+
 def generate_device_name(device, description):
     """ This function generates a name
     of a VNF running in RTP datacenter

@@ -1,4 +1,6 @@
 from Designing_Software.toolbox import generate_device_name, is_ipv4_address
+from Designing_Software.addressDB import *
+
 
 class Interface:
     def __init__(self, name, address):
@@ -25,6 +27,9 @@ class Device:
         self.hostname = hostname
         self.motd = None
         self.interface = None
+
+    def add_to_address_list(self):
+        addressDB.add(self.interface.address)
 
     def show(self, p = None):
         if not p:
