@@ -15,8 +15,8 @@ def publish_result(test):
         print(f'{test.__name__}: {result}')
     return wrapper
 
-## Note that all the decorated test functions take no
-## argument and return an array
+## Note that in this example, decorated test functions take no
+## argument and returns an array
 ## value =  [is_greater(x,y), <bool>]
 
 @publish_result
