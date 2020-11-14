@@ -31,9 +31,7 @@ class TestParse(unittest.TestCase):
             Validate vlans for all customers
         '''
         parsed_vlans = []
-        for expected_vlan, customer_name in zip(
-            self.expected_vlans,
-            self.expected_names):
+        for customer_name in self.expected_names:
             parsed_vlans.append(self.cp.parseCustomerVlan(customer_name))
         self.assertEqual(self.expected_vlans, parsed_vlans)
 
@@ -43,9 +41,7 @@ class TestParse(unittest.TestCase):
             Validate IP address for all customers
         '''
         parsed_ip_addresses = []
-        for expected_ip_addresses, customer_name in zip(
-                self.expected_ip_addresses,
-                self.expected_names):
+        for customer_name in self.expected_names:
             parsed_ip_addresses.append(self.cp.parseCustomerIPAddress(customer_name))
         self.assertEqual(self.expected_ip_addresses, parsed_ip_addresses)
 
