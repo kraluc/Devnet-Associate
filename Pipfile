@@ -7,9 +7,10 @@ verify_ssl = true
 pylint = "*"
 
 [packages]
-ruamel.yaml = "*"
+requests = "*"
 pytest = "*"
 tools = "*"
+"ruamel.yaml" = "*"
 
 [requires]
 python_version = "3"

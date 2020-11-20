@@ -10,7 +10,7 @@ from is_greater import is_greater
 
 class TestTools(unittest.TestCase):  # Derive a concrete child class from BASE class
     def setUp(self): # fixture method, run *before* the test method
-        self.tools = Tools('admin') # not defined!
+        self.tools = Tools('admin') # class Tools is not defined!
 
     # Define set of test methods - name must be prefixed with 'test', e.g. test_...
     def test_true_when_greater(self):

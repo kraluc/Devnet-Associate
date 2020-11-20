@@ -1,9 +1,11 @@
 #!/bin/env python
 
-## Due to nested module location, reference path with respect to
-#  specified python path in 'settings.json'
-from Unit_testing_45.is_greater import is_greater
+import sys, os
 import pytest
+
+sys.path.append(os.path.join(os.path.curdir,'Unit_testing_45'))
+from is_greater import is_greater
+
 
 @pytest.fixture
 def tools_lib():
@@ -24,5 +26,4 @@ def test_user(tools_lib):
 
 def test_false_when_equal(tools_lib):
     assert not tools_lib.is_greater(5, 5)
-
 
