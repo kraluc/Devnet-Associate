@@ -1,0 +1,5 @@
+Hello Student!!
+
+Welcome to the DEVNET - DEVASC flask app!
+
+This file does not contain any sensitive data
