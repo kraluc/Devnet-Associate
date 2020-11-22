@@ -36,12 +36,16 @@ header = {"Cookie": "APIC-cookie=" + resp.cookies["APIC-cookie"]}
 # We leverage the .xml ending to receive the data back as XML.  We're adding health and faults to the printout to ensure that we get levels of data back from the APIC
 tenants = requests.get("https://sandboxapicdc.cisco.com/api/node/class/fvTenant.xml?rsp-subtree-include=health,faults", headers=header, verify=False)
 
-# Requests stores the text of the response in the .text attribute.  Lets print it to see raw XML
+print(f'\n\n{dir(tenants)}')
+
+
+# Requests stores the text of the response in the .text attribute.  Lets print it to see raw XML (tenants.txt is a string)
 print(tenants.text)
+
 
 ###  Step 2 - Parse tenant info into XML format using minidom
 
 print("\n\n\n ###########  STEP 2 ######### \n\n\n")
-dom = xml.dom.minidom.parseString(tenants.txt)
+dom = xml.dom.minidom.parseString(tenants.text)
 xml = dom.toprettyxml()
 print(xml)
