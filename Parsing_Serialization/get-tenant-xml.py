@@ -49,3 +49,29 @@ print("\n\n\n ###########  STEP 2 ######### \n\n\n")
 dom = xml.dom.minidom.parseString(tenants.text)
 xml = dom.toprettyxml()
 print(xml)
+
+
+### Step 3 - Get XML elements in Python
+
+print("\n\n\n ###########  STEP 3 ######### \n\n\n")
+tenant_objects = dom.firstChild
+if tenant_objects.hasChildNodes:
+    tenant_element = tenant_objects.firstChild
+while tenant_element is not None:
+    if tenant_element.tagName == 'fvTenant':
+        health_element = tenant_element.firstChild
+        output = "Tenant: " + tenant_element.getAttribute('name') + '\t Health Score: ' + health_element.getAttribute('cur')
+        print(output.expandtabs(40))
+        tenant_element = tenant_element.nextSibling
+
+
+### Step 4 - Get XML elements in Python
+
+print("\n\n\n ###########  STEP 4 ######### \n\n\n")
+tenant_list = dom.getElementsByTagName('fvTenant')
+for tenant in tenant_list:
+    tenant_name = tenant.getAttribute('name')
+    tenant_dn = tenant.getAttribute('dn')
+    health_score = tenant.firstChild.getAttribute('cur')
+    output = "Tenant " + tenant_name + "\t Health Score: " + health_score + "\n DN: " + tenant_dn
+    print(output.expandtabs(40))
