@@ -1,0 +1,23 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+    <server>
+        <pool>http</pool>
+        <description>My virtual server test</description>
+        <name>http-virtual</name>
+        <mask>255.255.255.255</mask>
+        <profiles>
+            <profile1>
+                <name>http</name>
+                <kind>ltm:virtual:profile</kind>
+            </profile1>
+            <profile>
+                <name>tcp</name>
+                <kind>ltm:virtual:profile</kind>
+            </profile>
+        </profiles>
+        <ipProtocol>tcp</ipProtocol>
+        <sourceAddressTranslation>
+            <type>automap</type>
+        </sourceAddressTranslation>
+        <kind>tm:ltm:virtual:virtualstate</kind>
+        <destination>1.1.1.3:80</destination>
+    </server>
