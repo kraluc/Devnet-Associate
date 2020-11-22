@@ -42,6 +42,6 @@ print(tenants.text)
 ###  Step 2 - Parse tenant info into XML format using minidom
 
 print("\n\n\n ###########  STEP 2 ######### \n\n\n")
-dom = xml.dom.minidom(tenants.txt)
+dom = xml.dom.minidom.parseString(tenants.txt)
 xml = dom.toprettyxml()
 print(xml)
