@@ -1,0 +1,14 @@
+.DS_Store
+Designing_Software/__pycache__/device_name.cpython-38.pyc
+Designing_Software/__pycache__/device.cpython-38.pyc
+Designing_Software/__pycache__/model.cpython-38.pyc
+Designing_Software/__pycache__/playlist.cpython-38.pyc
+Designing_Software/__pycache__/toolbox.cpython-38.pyc
+Designing_Software/__pycache__/user.cpython-38.pyc
+DockerFile_136/.DS_Store
+Parsing_Serialization/.DS_Store
+Testing_Securing_Applications_1311/__pycache__/flask_app.cpython-37.pyc
+Unit_testing_45/.coverage
+Unit_testing_45/__pycache__/__init__.cpython-38.pyc
+Unit_testing_45/__pycache__/login.cpython-38.pyc
+Unit_testing_45/__pycache__/test_login.cpython-38-PYTEST.pyc
