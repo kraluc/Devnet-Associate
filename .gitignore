@@ -12,3 +12,10 @@ Unit_testing_45/.coverage
 Unit_testing_45/__pycache__/__init__.cpython-38.pyc
 Unit_testing_45/__pycache__/login.cpython-38.pyc
 Unit_testing_45/__pycache__/test_login.cpython-38-PYTEST.pyc
+DNAC/path-trace-labs/__pycache__/dnac_config.cpython-34.pyc
+DNAC/path-trace-labs/__pycache__/dnac.cpython-34.pyc
+DNAC/path-trace-labs/__pycache__/tabulate.cpython-34.pyc
+DNAC/path-trace-labs/dnac_config.pyc
+DNAC/path-trace-labs/dnac.pyc
+DNAC/path-trace-labs/tabulate.pyc
+DNAC/basic-labs/.vscode/settings.json
